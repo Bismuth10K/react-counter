@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ca899df1-db5c-4891-ad3e-31e7319409b9"
+      }
+    },
+    "owner": "bismuth"
   }
 }
