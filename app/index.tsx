@@ -30,9 +30,6 @@ export default function Index() {
 			<View>
 				<ThemedText type={"title"}>Compteur des BOYS</ThemedText>
 			</View>
-			<View>
-				<ThemedText>{JSON.stringify(listeCounter)}</ThemedText>
-			</View>
 			{listePersonnes.map((item, index) => (
 				<View style={styles.row} key={index}>
 					<ThemedText>{item}</ThemedText>
