@@ -27,10 +27,10 @@ export default function Index() {
 				},
 			]}
 		>
-			<View style={styles.title}>
+			<View>
 				<ThemedText type={"title"}>Compteur des BOYS</ThemedText>
 			</View>
-			<View style={styles.title}>
+			<View>
 				<ThemedText>{JSON.stringify(listeCounter)}</ThemedText>
 			</View>
 			{listePersonnes.map((item, index) => (
@@ -39,16 +39,22 @@ export default function Index() {
 					<View style={styles.buttons}>
 						<ThemedCircleButton
 							title={""}
-							iconName={"add-circle-outline"}
+							iconName={"remove-circle-outline"}
 							size={50}
-							onPress={() => appendToJsonFile(item, 1)}
+							onPress={() => {
+								appendToJsonFile(item, -1);
+								refetch;
+							}}
 						/>
 						<ThemedText style={{ padding: 10 }}>{getCounter(item)}</ThemedText>
 						<ThemedCircleButton
 							title={""}
-							iconName={"remove-circle-outline"}
+							iconName={"add-circle-outline"}
 							size={50}
-							onPress={() => appendToJsonFile(item, -1)}
+							onPress={() => {
+								appendToJsonFile(item, 1);
+								refetch;
+							}}
 						/>
 					</View>
 				</View>
